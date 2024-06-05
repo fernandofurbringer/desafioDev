@@ -1,0 +1,25 @@
+.form {
+    display: flex; 
+    justify-content: center; 
+    margin-bottom: 15px;
+    margin-top: 15px;
+  }
+  
+  .fileInput {
+    display: none; 
+  }
+  
+  .customButton {
+    padding: 12px 24px; 
+    background-color: #007bff; 
+    color: #fff; 
+    border: none; 
+    border-radius: 5px; 
+    font-size: 16px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+  }
+  
+  .customButton:hover {
+    background-color: #0056b3; 
+  }
