@@ -10,6 +10,8 @@ export default function Home() {
   const extrairDadosPlanilhaExcel = async (event) => {
     const file = event.target.files[0];
 
+    localStorage.removeItem('tableData');
+
     if (!file || !(file instanceof Blob)) {
       console.error('Arquivo inválido');
       return;

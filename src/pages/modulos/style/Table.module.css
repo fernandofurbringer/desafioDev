@@ -1,0 +1,16 @@
+.table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table th,
+  .table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+  }
+  
+  .table th {
+    background-color: #007bff; /* Azul para o cabeçalho */
+    color: #fff; /* Texto branco no cabeçalho */
+    font-weight: bold;
+  }

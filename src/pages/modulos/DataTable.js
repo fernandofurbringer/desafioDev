@@ -1,20 +1,16 @@
 import React, { useState } from 'react';
-import styles from "../modulos/style/DataTable.module.css";
+import useEditableData from './useEditableData';
+import SearchInput from './SearchInput';
+import Table from './Table';
+import Buttons from './Buttons';
+import styles from './style/DataTable.module.css';
 
 const DataTable = ({ data }) => {
   const [searchTerm, setSearchTerm] = useState('');
-
-  const handleSearch = (e) => {
-    setSearchTerm(e.target.value);
-  };
-
-  // Verifica se data é válido antes de acessá-lo
-  if (!data || !Array.isArray(data) || data.length === 0) {
-    return <div></div>;
-  }
+  const { editableData, handleEdit, handleSave, handleClear } = useEditableData(data);
 
   // Filtra os dados com base no searchTerm
-  const filteredData = data.filter((row) =>
+  const filteredData = editableData.filter((row) =>
     Object.values(row).some(
       (value) =>
         typeof value === 'string' && value.toLowerCase().includes(searchTerm.toLowerCase())
@@ -22,32 +18,12 @@ const DataTable = ({ data }) => {
   );
 
   return (
-    <div>
-      <input
-        type="text"
-        placeholder="Pesquisar..."
-        value={searchTerm}
-        onChange={handleSearch}
-        className={styles.searchInput}
-      />
-      <table className={styles.table}>
-        <thead>
-          <tr>
-            {Object.keys(data[0]).map((header) => (
-              <th key={header}>{header}</th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {filteredData.map((row, index) => (
-            <tr key={index}>
-              {Object.values(row).map((value, i) => (
-                <td key={i}>{value}</td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <div className={styles.dataTable}>
+      <div className={styles.controls}>
+        <SearchInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} className={styles.searchInput} />
+        <Buttons handleSave={handleSave} handleClear={handleClear} />
+      </div>
+      <Table data={filteredData} handleEdit={handleEdit} />
     </div>
   );
 };
