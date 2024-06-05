@@ -1,0 +1,21 @@
+{
+  "name": "desafio-dev",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "14.1.4",
+    "react": "^18",
+    "react-dom": "^18",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.2/xlsx-0.20.2.tgz"
+  },
+  "description": "Esse desafio foi feito baseado no framework [NextJs](https://nextjs.org/) que tem como base o [ReactJs](https://pt-br.legacy.reactjs.org/)",
+  "main": "index.js",
+  "author": "Fernando Furbringer",
+  "license": "ISC"
+}
