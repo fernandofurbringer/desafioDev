@@ -10,6 +10,16 @@ Caso deseje adicionar valor ao desafio, fique encorajado a usar a criatividade, 
 
 Boa sorte!
 
+#### Baixar o codigo e executar
+
+```bash
+   git clone https://github.com/fernandofurbringer/desafioDev.git
+```
+
+```bash
+  cd desafioDev && npm i
+```
+
 
 #### Utilizado o SheetJS para trabalhar com Excel para instalar:
 
